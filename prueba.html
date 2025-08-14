@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANNBOW - La Piel, Nuestro Mejor Ropaje</title>
+    <style>
+        :root {
+            --font-primary: "Roboto", sans-serif;
+            --font-secondary: "Playfair Display", serif;
+            --color-accent-primary-1: #c69f73;
+            --color-accent-secondary-2: #3c556e;
+        }
+
+        .section {
+            padding: 80px 0;
+            background-color: #f8f6f3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .col-text {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .col-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Ícono de comillas */
+        .quote-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #2c2c2c;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .quote-icon::before {
+            content: '"';
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: var(--font-secondary);
+        }
+
+        /* Texto principal */
+        .main-text {
+            font-size: 42px;
+            font-weight: 300;
+            color: var(--color-accent-secondary-2);
+            line-height: 1.2;
+            margin-bottom: 40px;
+            font-family: var(--font-secondary);
+        }
+
+        .main-text .highlight {
+            font-style: italic;
+            color: var(--color-accent-primary-1);
+        }
+
+        /* Atribución */
+        .attribution {
+            font-size: 14px;
+            color: #888;
+            font-weight: 400;
+            font-family: var(--font-primary);
+        }
+
+        /* Imagen del producto */
+        .product-container {
+            width: 320px;
+            height: 320px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--color-accent-primary-1) 0%, #d4a574 50%, #b8956b 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        /* Barra de jabón */
+        .soap-bar {
+            width: 130px;
+            height: 85px;
+            background: linear-gradient(45deg, #f4d03f 0%, #f1c40f 50%, #e67e22 100%);
+            border-radius: 10px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transform: rotate(-8deg);
+        }
+
+        /* Brillo en el jabón */
+        .soap-shine {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            width: 35px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            filter: blur(1px);
+        }
+
+        /* Elementos decorativos */
+        .deco-circle-1 {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            width: 70px;
+            height: 70px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .deco-circle-2 {
+            position: absolute;
+            bottom: 35px;
+            left: 35px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column-reverse;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .main-text {
+                font-size: 28px;
+            }
+
+            .product-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .soap-bar {
+                width: 110px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Texto -->
+                <div class="col-text">
+                    <div class="quote-icon"></div>
+                    
+                    <div class="main-text">
+                        Los jabones ANNBOW sostienen un Ph saludable para la dermis humana y 
+                        <span class="highlight">nunca han sido más naturales</span>.
+                    </div>
+                    
+                    <div class="attribution">
+                        Elena Chen • ANNBOW Skincare
+                    </div>
+                </div>
+
+                <!-- Imagen -->
+                <div class="col-image">
+                    <div class="product-container">
+                        <div class="deco-circle-1"></div>
+                        <div class="deco-circle-2"></div>
+                        
+                        <div class="soap-bar">
+                            <div class="soap-shine"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
