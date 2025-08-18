@@ -9,6 +9,13 @@
   <meta content="telephone=no" name="format-detection" />
   <meta name="HandheldFriendly" content="true" />
   <meta name="description" content="ANNBOW – Jabones Artesanales de Glicerina Natural" />
+  
+  <!-- Preload recursos críticos -->
+  <link rel="preload" href="css/main.css" as="style">
+  <link rel="preload" href="js/vendor.js" as="script">
+  <link rel="preload" href="https://d32y9rwo15omps.cloudfront.net/video-banner.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="img/logo/logo-beige.svg" as="image">
+  
   <link rel="stylesheet" type="text/css"
     href="https://fonts.googleapis.com/css?family=Roboto:100,400,400i,700,700i%7CPlayfair+Display:400,400i,700,700i%7CMaterial+Icons&amp;display=swap" />
   <link rel="stylesheet" type="text/css" href="css/vendor.css" />
@@ -31,6 +38,38 @@
   <meta name="msapplication-TileImage" content="img/content/ms-icon-144x144.png" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/x-icon" href="img/content/favicon.ico" />
+  
+  <style>
+    /* Timeout para preloader */
+    .preloader {
+      animation: preloader-timeout 4s forwards;
+    }
+    
+    @keyframes preloader-timeout {
+      0% { opacity: 1; visibility: visible; }
+      95% { opacity: 1; visibility: visible; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+    
+    /* Forzar separación del formulario de contacto con mayor especificidad */
+    .section.section-form .form-contact.form.js-ajax-form {
+      padding-top: 5rem !important;
+      margin-top: 3rem !important;
+    }
+    
+    .bg-dark-2 .section.section-form .form-contact.form.js-ajax-form {
+      padding-top: 5rem !important;
+      margin-top: 3rem !important;
+    }
+    
+    @media (max-width: 768px) {
+      .section.section-form .form-contact.form.js-ajax-form,
+      .bg-dark-2 .section.section-form .form-contact.form.js-ajax-form {
+        padding-top: 3rem !important;
+        margin-top: 2rem !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -41,7 +80,7 @@
       <div class="preloader__content">
         <div class="preloader__curtain preloader__curtain_inner bg-accent-primary-1"></div>
         <div class="preloader__wrapper-logo">
-          <a class="logo" href="homepage-slider-4.html">
+          <a class="logo" href="nosotros.html">
             <div class="logo__wrapper-img">
               <img src="img/logo/logo-beige.svg" alt="ANNBOW" />
             </div>
@@ -64,18 +103,18 @@
           </div>
           <div class="col-auto text-center d-none d-lg-block">
             <ul class="menu">
-              <li class="menu-item-has-children"><a href="projects-grid-2.html">Productos</a>
+              <li><a href="index.html">Inicio</a></li>
+              <li class="menu-item-has-children"><a href="catalogo.html">Productos</a>
                 <ul class="sub-menu">
-                  <li><a href="project-1.html">Producto 1</a></li>
-                  <li><a href="project-2.html">Producto 2</a></li>
-                  <li><a href="project-3.html">Producto 3</a></li>
-                  <li><a href="project-4.html">Producto 4</a></li>
-                  <li><a href="project-5.html">Producto 5</a></li>
-                  <li><a href="project-6.html">Producto 6</a></li>
+                  <li><a href="productos/neutro.html">Jabón neutro</a></li>
+                  <li><a href="productos/perfumados.html">Jabones perfumados</a></li>
+                  <li><a href="productos/baby.html">Baby Hipoalergénico</a></li>
+                  <li><a href="productos/coco.html">Tocador de Coco</a></li>
+                  <li><a href="productos/marcas-blandas.html">Marcas Blandas</a></li>
                 </ul>
               </li>
-              <li><a href="about.html">Acerca de</a></li>
-              <li><a href="contacts.html">Contacto</a></li>
+              <li><a href="nosotros.html">Acerca de</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
             </ul>
           </div>
           <div class="col-auto text-center d-lg-none">
@@ -87,9 +126,7 @@
           <div class="col d-none d-lg-block text-right header__col-right">
             <ul class="social">
               <li class="social__item"><a class="fa fa-facebook-f" href="#"></a></li>
-              <li class="social__item"><a class="fa fa-twitter" href="#"></a></li>
               <li class="social__item"><a class="fa fa-instagram" href="#"></a></li>
-              <li class="social__item"><a class="fa fa-behance" href="#"></a></li>
             </ul>
           </div>
         </div>
@@ -99,49 +136,44 @@
       <div class="header__wrapper-overlay-menu container-fluid bg-white">
         <div class="header__wrapper-menu">
           <ul class="menu-overlay js-menu-overlay">
-            <li class="menu-item-has-children"><a href="projects-grid-2.html" data-letter="P">
+            <li class="menu-item-has-children"><a href="catalogo.html" data-letter="P">
                 <div class="menu-overlay__item-wrapper js-text-to-fly split-text js-split-text"
                   data-split-text-type="lines, words, chars">Productos</div>
               </a>
               <ul class="sub-menu">
-                <li><a href="project-1.html" data-letter="P" data-pjax-link="overlayMenu">
+                <li><a href="productos/neutro.html" data-letter="P" data-pjax-link="overlayMenu">
                     <div class="menu-overlay__item-wrapper js-text-to-fly split-text js-split-text"
-                      data-split-text-type="lines, words, chars">Producto 1</div>
+                      data-split-text-type="lines, words, chars">Jabón Neutro</div>
                   </a>
                 </li>
-                <li><a href="project-2.html" data-letter="P" data-pjax-link="overlayMenu">
+                <li><a href="productos/perfumados.html" data-letter="P" data-pjax-link="overlayMenu">
                     <div class="menu-overlay__item-wrapper js-text-to-fly split-text js-split-text"
-                      data-split-text-type="lines, words, chars">Producto 2</div>
+                      data-split-text-type="lines, words, chars">Jabones Perfumados</div>
                   </a>
                 </li>
-                <li><a href="project-3.html" data-letter="P" data-pjax-link="overlayMenu">
+                <li><a href="productos/baby.html" data-letter="P" data-pjax-link="overlayMenu">
                     <div class="menu-overlay__item-wrapper js-text-to-fly split-text js-split-text"
-                      data-split-text-type="lines, words, chars">Producto 3</div>
+                      data-split-text-type="lines, words, chars">Baby Hipoalergénico</div>
                   </a>
                 </li>
-                <li><a href="project-4.html" data-letter="P" data-pjax-link="overlayMenu">
+                <li><a href="productos/coco.html" data-letter="P" data-pjax-link="overlayMenu">
                     <div class="menu-overlay__item-wrapper js-text-to-fly split-text js-split-text"
-                      data-split-text-type="lines, words, chars">Producto 4</div>
+                      data-split-text-type="lines, words, chars">Tocador de Coco</div>
                   </a>
                 </li>
-                <li><a href="project-5.html" data-letter="P" data-pjax-link="overlayMenu">
+                <li><a href="productos/marcas-balndas.html" data-letter="P" data-pjax-link="overlayMenu">
                     <div class="menu-overlay__item-wrapper js-text-to-fly split-text js-split-text"
-                      data-split-text-type="lines, words, chars">Producto 5</div>
-                  </a>
-                </li>
-                <li><a href="project-6.html" data-letter="P" data-pjax-link="overlayMenu">
-                    <div class="menu-overlay__item-wrapper js-text-to-fly split-text js-split-text"
-                      data-split-text-type="lines, words, chars">Producto 6</div>
+                      data-split-text-type="lines, words, chars">Marcas Blandas</div>
                   </a>
                 </li>
               </ul>
             </li>
-            <li><a href="about.html" data-letter="A" data-pjax-link="overlayMenu">
+            <li><a href="nosotros.html" data-letter="A" data-pjax-link="overlayMenu">
                 <div class="menu-overlay__item-wrapper js-text-to-fly split-text js-split-text"
                   data-split-text-type="lines, words, chars">Acerca de</div>
               </a>
             </li>
-            <li><a href="contacts.html" data-letter="C" data-pjax-link="overlayMenu">
+            <li><a href="contacto.html" data-letter="C" data-pjax-link="overlayMenu">
                 <div class="menu-overlay__item-wrapper js-text-to-fly split-text js-split-text"
                   data-split-text-type="lines, words, chars">Contacto</div>
               </a>
@@ -155,9 +187,7 @@
               <div class="col-lg-4 text-left">
                 <ul class="social">
                   <li class="social__item"><a class="fa fa-facebook-f" href="#"></a></li>
-                  <li class="social__item"><a class="fa fa-twitter" href="#"></a></li>
                   <li class="social__item"><a class="fa fa-instagram" href="#"></a></li>
-                  <li class="social__item"><a class="fa fa-behance" href="#"></a></li>
                 </ul>
               </div>
             </div>
@@ -205,7 +235,7 @@
             <h1 class="section-masthead__heading section-intro__heading split-text js-split-text text-xl"
               data-split-text-type="lines, words, chars" data-split-text-set="chars">ANNBOW</h1>
             <div class="section-masthead__wrapper-button d-lg-block d-none"><a class="link-arrow"
-                href="projects-grid-2.html">
+                href="catalogo.html">
                 <div class="link-arrow__label">Ver Productos</div>
                 <div class="link-arrow__icon material-icons">keyboard_arrow_right</div>
               </a></div>
@@ -214,7 +244,7 @@
             <h4 class="heading-light split-text js-split-text section-masthead__text" data-split-text-type="lines"
               data-split-text-set="lines">Como artesanos, creamos jabones para las personas – jabones que promueven el
               cuidado natural de la piel.</h4>
-            <div class="section-masthead__wrapper-button d-lg-none"><a class="link-arrow" href="projects-grid-2.html">
+            <div class="section-masthead__wrapper-button d-lg-none"><a class="link-arrow" href="catalogo.html">
                 <div class="link-arrow__label">Ver Productos</div>
                 <div class="link-arrow__icon material-icons">keyboard_arrow_right</div>
               </a></div>
@@ -222,14 +252,15 @@
         </header>
       </div>
 
-      <!-- Video Background -->
+      <!-- Video Background Optimizado -->
       <div class="section-masthead__background section-masthead__background_fullscreen" data-art-parallax="background"
         data-art-parallax-factor="0.1">
         <div class="video-background">
-          <video autoplay muted loop playsinline class="video-background__video">
+          <video autoplay muted loop playsinline class="video-background__video" poster="img/assets/sectionIntro/bg-2.jpg">
+            <source src="https://d32y9rwo15omps.cloudfront.net/video-banner.webm" type="video/webm">
             <source src="https://d32y9rwo15omps.cloudfront.net/video-banner.mp4" type="video/mp4">
             <!-- Fallback image if video doesn't load -->
-            <img src="img/assets/sectionIntro/bg-2.jpg" alt="ANNBOW Background">
+            <img src="img/assets/sectionIntro/bg-2.jpg" alt="ANNBOW Background" loading="lazy">
           </video>
         </div>
         <div class="overlay overlay_dark section-masthead__overlay"></div>
@@ -265,11 +296,6 @@
         <div class="row justify-content-center align-items-center">
           <!-- Contenido de texto -->
           <div class="col-lg-6 section-content__content">
-            <!-- Icono de comillas -->
-            <div class="quote-icon-modern">
-              <div class="quote-icon-modern__symbol">"</div>
-            </div>
-
             <!-- Texto principal -->
             <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
               <h3 class="modern-quote-text">
@@ -288,7 +314,7 @@
           <!-- Imagen del producto -->
           <div class="col-lg-6 section-content__content text-center">
             <div class="product-image-container">
-              <img src="img/home/quote.png" alt="ANNBOW Jabón Natural" class="product-image">
+              <img src="img/home/quote.png" alt="ANNBOW Jabón Natural" class="product-image" loading="lazy">
             </div>
           </div>
         </div>
@@ -316,10 +342,10 @@
     <section class="section section-portfolio bg-dark">
       <div class="swiper-container slider slider-projects js-slider-projects">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="project-1.html"
+          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="productos/neutro.html"
               data-pjax-link="flyingHeading">
               <div class="figure-portfolio__wrapper-img">
-                <div class="lazy"><img src="https://d32y9rwo15omps.cloudfront.net/neutro.png"  alt="" width="1200" height="1800" />
+                <div class="lazy"><img src="img/productos/neutro.png" alt="" width="1200" height="1800" loading="lazy" />
                 </div>
                 <div class="figure-portfolio__content bg-dark-3">
                   <div class="figure-portfolio__category">Glicerina Pura</div>
@@ -333,11 +359,11 @@
               </div>
             </a>
           </div>
-          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="project-2.html"
+          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="productos/perfumados.html"
               data-pjax-link="flyingHeading">
               <div class="figure-portfolio__wrapper-img">
-                <div class="lazy"><img src="https://d32y9rwo15omps.cloudfront.net/perfurmado.png"  alt="" width="1200"
-                    height="1800" /></div>
+                <div class="lazy"><img src="img/productos/perfumados.png" alt="" width="1200"
+                    height="1800" loading="lazy" /></div>
                 <div class="figure-portfolio__content bg-dark-3">
                   <div class="figure-portfolio__category">Glicerina Pura</div>
                   <div class="figure-portfolio__header">
@@ -350,10 +376,10 @@
               </div>
             </a>
           </div>
-          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="project-3.html"
+          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="productos/baby.html"
               data-pjax-link="flyingHeading">
               <div class="figure-portfolio__wrapper-img">
-                <div class="lazy"><img src="https://d32y9rwo15omps.cloudfront.net/baby.png"  alt="" width="1200" height="1800" />
+                <div class="lazy"><img src="img/productos/baby.png" alt="" width="1200" height="1800" loading="lazy" />
                 </div>
                 <div class="figure-portfolio__content bg-dark-3">
                   <div class="figure-portfolio__category">Glicerina Pura</div>
@@ -367,10 +393,10 @@
               </div>
             </a>
           </div>
-          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="project-4.html"
+          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="productos/coco.html"
               data-pjax-link="flyingHeading">
               <div class="figure-portfolio__wrapper-img">
-                <div class="lazy"><img src="https://d32y9rwo15omps.cloudfront.net/coco.png" alt="" width="1200" height="1800" />
+                <div class="lazy"><img src="img/productos/coco.png" alt="" width="1200" height="1800" loading="lazy" />
                 </div>
                 <div class="figure-portfolio__content bg-dark-3">
                   <div class="figure-portfolio__category">Con aceite de coco</div>
@@ -384,11 +410,11 @@
               </div>
             </a>
           </div>
-          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="project-5.html"
+          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="productos/marcas-balndas.html"
               data-pjax-link="flyingHeading">
               <div class="figure-portfolio__wrapper-img">
-                <div class="lazy"><img src="https://d32y9rwo15omps.cloudfront.net/tienda-inglesa.png"  alt="" width="1200"
-                    height="1800" /></div>
+                <div class="lazy"><img src="img/productos/marcas-balndas.png" alt="" width="1200"
+                    height="1800" loading="lazy" /></div>
                 <div class="figure-portfolio__content bg-dark-3">
                   <div class="figure-portfolio__category">Marcas Blandas</div>
                   <div class="figure-portfolio__header">
@@ -401,10 +427,10 @@
               </div>
             </a>
           </div>
-          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="project-6.html"
+          <div class="swiper-slide"><a class="figure-portfolio figure-portfolio-item_hover" href="productos/marcas-balndas.html"
               data-pjax-link="flyingHeading">
               <div class="figure-portfolio__wrapper-img">
-                <div class="lazy"><img src="https://d32y9rwo15omps.cloudfront.net/colibri.png"  alt="" width="1200" height="1800" />
+                <div class="lazy"><img src="https://d32y9rwo15omps.cloudfront.net/colibri.png" alt="" width="1200" height="1800" loading="lazy" />
                 </div>
                 <div class="figure-portfolio__content bg-dark-3">
                   <div class="figure-portfolio__category">Marcas Blandas</div>
@@ -612,13 +638,15 @@
       <div class="section__content">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-lg-10 col-xl-8">
               <header class="section-cta__header">
-                <h2 class="section-cta__heading">NOS ENORGULLECEMOS DE UTILIZAR MÉTODOS DE PRODUCCIÓN SOSTENIBLES, ASEGURANDO QUE CADA UNO DE NUESTROS JABONES SEA UNA VERDADERA OBRA DE ARTE</h2>
-                <p>Seguinos en nuestras redes para más información.</p>
+                <h2 class="section-cta__heading" style="font-size: 2.2rem; line-height: 1.3; font-weight: 600; margin-bottom: 1.5rem;">
+                  Nos enorgullecemos de utilizar métodos de producción sostenibles, asegurando que cada uno de nuestros jabones sea una verdadera obra de arte
+                </h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">Seguinos en nuestras redes para más información.</p>
               </header>
               <div class="section-cta__wrapper-button section-content__wrapper-button"><a
-                  class="button button_icon button_accent" href="instagram.com" target="_blank">
+                  class="button button_icon button_accent" href="https://instagram.com" target="_blank">
                   <div class="button__label">¡Seguinos!</div>
                   <div class="button__icon"><i class="material-icons">keyboard_arrow_right</i></div>
                 </a></div>
@@ -628,7 +656,7 @@
       </div>
       <div class="section-image__wrapper section-image__wrapper_absolute" data-art-parallax="background"
         data-art-parallax-factor="0.1">
-        <div class="art-parallax__bg lazy-bg" src="https://d32y9rwo15omps.cloudfront.net/fondo-marron-textura-de-reflejo-de-agua.jpg"></div>
+        <div class="art-parallax__bg lazy-bg" style="background-image: url('https://d32y9rwo15omps.cloudfront.net/fondo-marron-textura-de-reflejo-de-agua.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
         <div class="section-image__overlay overlay overlay_dark"></div>
       </div>
     </section>
@@ -636,13 +664,13 @@
 
           <!-- section FORM -->
           <div class="bg-dark-2">
-            <section class="section section-form text-center section_pb-small section-offset_top">
-              <div class="container border-radius section-offset__content bg-dark-3">
-                <div class="row justify-content-center">
-                  <div class="col-sm-10">
+            <section class="section section-form text-center section_pb-small section-offset_top" >
+              <div class="container border-radius section-offset__content bg-dark-3" style="max-width: 900px;">
+                <div class="row justify-content-center" >
+                  <div class="col-sm-10 col-md-8 col-lg-7" >
                     <form class="form form-contact js-ajax-form" action="mail.php" method="POST" data-message-success="Gracias por tu mensaje! Nos pondremos en contacto a la brevedad" data-message-error="Error inesperado :( Contactanos por mail">
                       <h3 class="form__heading">Contactanos!</h3>
-                      <div class="row form__row">
+                      <div class="row form__row" >
                         <div class="col-lg-6 form__col">
                           <label class="input-float js-input-float">
                             <input class="input-float__input" type="text" name="visitor_name" required="required" data-msg="Please enter your name"/><span class="input-float__label">Nombre</span><span class="form__error"></span>
@@ -694,7 +722,7 @@
                 <div class="col-lg-3">
                   <div class="figure-contact">
                     <div class="figure-contact__icon material-icons">mail</div>
-                    <div class="figure-contact__item"><a href="#">cassio@example.com</a></div>
+                    <div class="figure-contact__item"><a href="#">info@annbow.com</a></div>
                   </div>
                 </div>
               </div>
@@ -707,9 +735,9 @@
         <div class="footer__row row">
           <div class="col-lg-4 text-left footer__column">
             <section class="widget widget_cassio_logo">
-              <a class="logo" href="homepage-slider-4.html">
+              <a class="logo" href="index.html">
                 <div class="logo__wrapper-img">
-                  <img src="img/logo/logo-beige.svg" alt="ANNBOW" />
+                  <img src="img/logo/logo-beige.svg" alt="ANNBOW" loading="lazy" />
                 </div>
               </a>
               <p>Jabones artesanales desde Uruguay</p>
@@ -719,9 +747,7 @@
             <section class="widget widget_cassio_social">
               <ul class="social">
                 <li class="social__item"><a class="fa fa-facebook-f" href="#"></a></li>
-                <li class="social__item"><a class="fa fa-twitter" href="#"></a></li>
                 <li class="social__item"><a class="fa fa-instagram" href="#"></a></li>
-                <li class="social__item"><a class="fa fa-behance" href="#"></a></li>
               </ul>
             </section>
           </div>
@@ -747,6 +773,21 @@
   <!-- COMPONENTS -->
   <script src="js/components.js"></script>
   <!-- - COMPONENTS -->
+  
+  <!-- Timeout JavaScript para preloader -->
+  <script>
+    // Timeout de 4 segundos para el preloader como backup
+    setTimeout(function() {
+      const preloader = document.querySelector('.js-preloader');
+      if (preloader && preloader.style.display !== 'none') {
+        preloader.style.opacity = '0';
+        preloader.style.visibility = 'hidden';
+        setTimeout(function() {
+          preloader.style.display = 'none';
+        }, 300);
+      }
+    }, 4000);
+  </script>
 
   <!-- PAGE SCRIPTS-->
   <!-- - PAGE SCRIPTS-->
