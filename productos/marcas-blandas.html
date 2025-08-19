@@ -46,6 +46,71 @@
       .split-text, .js-split-text {
         will-change: transform;
       }
+
+      /* Estilos mejorados para propiedades con iconos */
+      .figure-info {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        margin-bottom: 30px;
+        height: 100%;
+      }
+      
+      .figure-info:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(198, 159, 115, 0.15);
+      }
+      
+      .figure-info__icon {
+        width: 60px;
+        height: 60px;
+        background: #c69f73;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 28px;
+        transition: all 0.3s ease;
+      }
+      
+      .figure-info:hover .figure-info__icon {
+        transform: scale(1.1);
+        background: #a8876b;
+      }
+      
+      .figure-info__option {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      
+      .figure-info__value {
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      /* Animación para la entrada de secciones */
+      .section-properties {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 0.8s ease forwards;
+        animation-delay: 0.3s;
+      }
+      
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </head>
   <body>
@@ -67,8 +132,8 @@
       <!-- - PAGE PRELOADER -->
       
       <!-- PAGE HEADER -->
-      <header class="header header_fixed js-sticky-header header_color-white" data-header-animation=""
-        data-header-sticky-theme="bg-white">
+      <header class="header header_fixed js-sticky-header header_color-dark" data-header-animation=""
+        data-header-sticky-theme="bg-dark">
         <div class="container-fluid header__controls">
           <div class="row justify-content-between align-items-center">
             <div class="col text-left header__col-left">
@@ -191,15 +256,15 @@
       </header>
       <!-- - PAGE HEADER -->
       
-      <div class="page-wrapper bg-accent-secondary-3 color-white" data-barba="container">
+      <div class="page-wrapper" data-barba="container">
         <main class="page-wrapper__content">
           <!-- section MASTHEAD -->
-          <section class="section section-masthead text-left bg-accent-secondary-4 color-white" data-os-animation="data-os-animation">
-            <div class="section-masthead__inner section_pt-large section_pb-small container">
-              <header class="row section-masthead__header">
-                <div class="col-lg-10">
+          <section class="section section-masthead section_pt-large section_pb-small text-left bg-light" data-os-animation="data-os-animation">
+            <div class="section-masthead__inner container-fluid">
+              <header class="row section-masthead__header justify-content-start">
+                <div class="col mw-960">
                   <div class="subheading split-text js-split-text section-masthead__subheading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Soluciones Personalizadas</div>
-                  <h1 class="js-text-to-fly split-text js-split-text section-masthead__heading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Marcas Blancas ANNBOW</h1>
+                  <h1 class="js-text-to-fly split-text js-split-text section-masthead__heading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Marcas Blandas</h1>
                   <h4 class="heading-light split-text js-split-text section-masthead__text" data-split-text-type="lines" data-split-text-set="lines">Desarrollamos productos de cuidado personal bajo tu propia marca. Ofrecemos soluciones completas de manufactura, empaque y diseño para grandes cadenas de supermercados, farmacias y distribuidores que buscan productos de calidad con su identidad de marca.</h4>
                   <div class="section__headline"></div>
                 </div>
@@ -208,71 +273,36 @@
           </section>
           <!-- - section MASTHEAD -->
           
-          <!-- section PROPERTIES -->
-          <section class="section section-properties section_pt-small section_pb-small text-left bg-accent-secondary-3 color-white">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-3 col-sm-6 section-properties__item">
-                  <div class="figure-info">
-                    <div class="figure-info__option">Servicio</div>
-                    <div class="figure-info__value">Manufactura OEM</div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 section-properties__item">
-                  <div class="figure-info">
-                    <div class="figure-info__option">Especialidad</div>
-                    <div class="figure-info__value">Marca Blanca</div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 section-properties__item">
-                  <div class="figure-info">
-                    <div class="figure-info__option">Clientes</div>
-                    <div class="figure-info__value">Grandes Cadenas</div>
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 section-properties__item">
-                  <div class="figure-info">
-                    <div class="figure-info__option">Experiencia</div>
-                    <div class="figure-info__value">Décadas</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- - section PROPERTIES -->
-          
           <!-- section IMAGE #1 -->
-          <section class="section section-image section_h-800">
+          <section class="section section-image section_w-container-right section_h-800">
             <div class="section-image__wrapper" data-art-parallax="background" data-art-parallax-factor="0.1">
-              <div class="art-parallax__bg lazy-bg" style="background-image: url('../img/assets/marcas-blancas/hero-marcas-blancas.jpg')"></div>
+              <div class="art-parallax__bg lazy-bg" style="background-image: url('../img/productos/producto-marcas-blandas.png')"></div>
             </div>
+            <div class="section-image__caption section-image__caption-vertical-left">Soluciones Empresariales</div>
           </section>
           <!-- - section IMAGE #1 -->
           
           <!-- section CONTENT #1 -->
-          <section class="section section-content section_pt section_pb bg-accent-secondary-4 color-white" data-os-animation="data-os-animation">
+          <section class="section section-content section_pt section_pb bg-light" data-os-animation="data-os-animation">
             <div class="container">
-              <div class="row">
-                <div class="col-lg-8 section-content__header section-content__header_mb">
-                  <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
-                    <h4>Nuestro servicio de marcas blancas permite a empresas desarrollar productos de cuidado personal con su propia identidad, respaldados por nuestra experiencia en manufactura y calidad.</h4>
-                  </div>
-                </div>
-              </div>
               <div class="row justify-content-between">
-                <div class="col-lg-2 section-content__content">
-                  <div class="section__headline section-content__headline"></div>
-                </div>
-                <div class="col-lg-4 section-content__content">
-                  <div class="section-content__subheading subheading split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines"><span>Flexibilidad</span></div>
+                <div class="col-lg-5 section-content__header">
                   <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
-                    <p>Desarrollamos productos adaptados a las necesidades específicas de cada cliente. Desde grandes cadenas como Tienda Inglesa hasta distribuidores especializados como Colibrí, ofrecemos soluciones flexibles en términos de formulación, presentación, empaque y volúmenes de producción que se ajustan a cada mercado.</p>
+                    <h5>Nuestro servicio de marcas blancas permite a empresas desarrollar productos de cuidado personal con su propia identidad, respaldados por nuestra experiencia en manufactura y calidad garantizada ANNBOW.</h5>
                   </div>
                 </div>
-                <div class="col-lg-4 section-content__content">
-                  <div class="section-content__subheading subheading split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines"><span>Experiencia</span></div>
-                  <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
-                    <p>Con décadas de experiencia en la industria del cuidado personal, hemos desarrollado productos para algunas de las marcas más reconocidas del mercado uruguayo. Nuestro equipo comprende las demandas del mercado retail y las expectativas de los consumidores.<br><br>Garantizamos la misma calidad ANNBOW bajo cualquier marca que produzcamos.</p>
+                <div class="col-lg-5 section-content__content">
+                  <div class="split-text js-split-text" data-split-text-type="words, lines" data-split-text-set="lines">
+                    <p><strong>Características principales:</strong><br>
+                    • Manufactura OEM especializada<br>
+                    • Desarrollo de productos personalizados<br>
+                    • Diseño y desarrollo de packaging<br>
+                    • Control de calidad ANNBOW garantizado<br>
+                    • Flexibilidad en volúmenes de producción<br>
+                    • Soporte técnico y comercial integral<br><br>
+                    
+                    <strong>Beneficios únicos:</strong><br>
+                    Desarrollamos productos adaptados a las necesidades específicas de cada cliente. Desde grandes cadenas como Tienda Inglesa hasta distribuidores especializados como Colibrí, ofrecemos soluciones flexibles que se ajustan a cada mercado con la calidad que nos caracteriza.</p>
                   </div>
                 </div>
               </div>
@@ -280,56 +310,53 @@
           </section>
           <!-- - section CONTENT #1 -->
 
-          <!-- section CONTENT #2 -->
-          <section class="section section-content section_pt section_pb bg-accent-secondary-3 color-white" data-os-animation="data-os-animation">
+          <!-- section PROPERTIES -->
+          <section class="section section-properties section_pt-small section_pb-small text-center bg-white">
             <div class="container">
-              <div class="row justify-content-between">
-                <div class="col-lg-5 section-content__header">
-                  <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
-                    <h4>Ventajas Competitivas</h4>
+              <div class="row">
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">business</i>
+                    </div>
+                    <div class="figure-info__option">Servicio</div>
+                    <div class="figure-info__value">Manufactura OEM</div>
                   </div>
                 </div>
-                <div class="col-lg-5 section-content__content">
-                  <div class="split-text js-split-text" data-split-text-type="words, lines" data-split-text-set="lines">
-                    <p><strong>Calidad Garantizada:</strong> Utilizamos los mismos estándares de calidad que aplicamos a nuestra marca ANNBOW, asegurando productos confiables y consistentes.<br><br>
-                    
-                    <strong>Flexibilidad de Producción:</strong> Adaptamos nuestros procesos a volúmenes desde pequeñas series hasta producciones masivas, manteniendo siempre la calidad.<br><br>
-                    
-                    <strong>Soporte Integral:</strong> Desde el desarrollo del concepto hasta la entrega final, acompañamos a nuestros clientes en cada etapa del proceso, ofreciendo asesoramiento técnico y comercial especializado.</p>
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">label</i>
+                    </div>
+                    <div class="figure-info__option">Especialidad</div>
+                    <div class="figure-info__value">Marca Blanca</div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">store</i>
+                    </div>
+                    <div class="figure-info__option">Clientes</div>
+                    <div class="figure-info__value">Grandes Cadenas</div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">verified</i>
+                    </div>
+                    <div class="figure-info__option">Garantía</div>
+                    <div class="figure-info__value">Calidad ANNBOW</div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <!-- - section CONTENT #2 -->
-
-          <!-- section PROCESS -->
-          <section class="section section-content section_pt section_pb bg-accent-secondary-4 color-white" data-os-animation="data-os-animation">
-            <div class="container">
-              <div class="row justify-content-between">
-                <div class="col-lg-5 section-content__header">
-                  <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
-                    <h4>Nuestro Proceso</h4>
-                  </div>
-                </div>
-                <div class="col-lg-5 section-content__content">
-                  <div class="split-text js-split-text" data-split-text-type="words, lines" data-split-text-set="lines">
-                    <p><strong>1. Consultoría Inicial:</strong> Analizamos las necesidades específicas de tu marca y mercado objetivo.<br><br>
-                    
-                    <strong>2. Desarrollo y Prototipo:</strong> Creamos formulaciones personalizadas y desarrollamos prototipos para tu aprobación.<br><br>
-                    
-                    <strong>3. Diseño de Packaging:</strong> Nuestro equipo de diseño desarrolla el empaque que refleje la identidad de tu marca.<br><br>
-                    
-                    <strong>4. Producción y Entrega:</strong> Manufacturamos según tus especificaciones y entregamos productos listos para comercializar.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- - section PROCESS -->
+          <!-- - section PROPERTIES -->
 
           <!-- section NAV PROJECTS -->
-          <section class="section-nav-projects bg-accent-secondary-3">
+          <section class="section-nav-projects bg-accent-primary-2">
             <div class="row no-gutters">
               <a class="col-md-5 section-nav-projects__inner section-nav-projects__inner_prev" href="coco.html" data-pjax-link="flyingHeading">
                 <div class="section-nav-projects__wrapper-heading section-nav-projects__wrapper-heading_prev">
@@ -389,7 +416,7 @@
         </main>
       </div>
       
-      <div class="transition-curtain bg-accent-secondary-2"></div>
+      <div class="transition-curtain bg-white"></div>
       <canvas id="js-webgl"></canvas>
     </div>
     

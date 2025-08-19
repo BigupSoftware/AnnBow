@@ -46,6 +46,71 @@
       .split-text, .js-split-text {
         will-change: transform;
       }
+
+      /* Estilos mejorados para propiedades con iconos */
+      .figure-info {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        margin-bottom: 30px;
+        height: 100%;
+      }
+      
+      .figure-info:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(198, 159, 115, 0.15);
+      }
+      
+      .figure-info__icon {
+        width: 60px;
+        height: 60px;
+        background: #c69f73;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 28px;
+        transition: all 0.3s ease;
+      }
+      
+      .figure-info:hover .figure-info__icon {
+        transform: scale(1.1);
+        background: #a8876b;
+      }
+      
+      .figure-info__option {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      
+      .figure-info__value {
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      /* Animación para la entrada de secciones */
+      .section-properties {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 0.8s ease forwards;
+        animation-delay: 0.3s;
+      }
+      
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </head>
   <body>
@@ -67,8 +132,8 @@
       <!-- - PAGE PRELOADER -->
       
       <!-- PAGE HEADER -->
-      <header class="header header_fixed js-sticky-header header_color-white" data-header-animation=""
-        data-header-sticky-theme="bg-white">
+      <header class="header header_fixed js-sticky-header header_color-dark" data-header-animation=""
+        data-header-sticky-theme="bg-dark">
         <div class="container-fluid header__controls">
           <div class="row justify-content-between align-items-center">
             <div class="col text-left header__col-left">
@@ -199,7 +264,7 @@
               <header class="row section-masthead__header justify-content-start">
                 <div class="col mw-960">
                   <div class="subheading split-text js-split-text section-masthead__subheading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Cuidado Natural</div>
-                  <h1 class="js-text-to-fly split-text js-split-text section-masthead__heading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Jabón de Tocador de Coco</h1>
+                  <h1 class="js-text-to-fly split-text js-split-text section-masthead__heading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Tocador de Coco</h1>
                   <h4 class="heading-light split-text js-split-text section-masthead__text" data-split-text-type="lines" data-split-text-set="lines">Experimenta la hidratación natural del coco en cada uso. Nuestro jabón de tocador con aceite de coco virgen nutre e hidrata profundamente tu piel, dejándola suave y perfumada con un delicioso aroma tropical.</h4>
                   <div class="section__headline"></div>
                 </div>
@@ -211,7 +276,7 @@
           <!-- section IMAGE #1 -->
           <section class="section section-image section_w-container-right section_h-800">
             <div class="section-image__wrapper" data-art-parallax="background" data-art-parallax-factor="0.1">
-              <div class="art-parallax__bg lazy-bg" style="background-image: url('../img/assets/projects/bg-coco.jpg')"></div>
+              <div class="art-parallax__bg lazy-bg" style="background-image: url('../img/productos/producto-coco.png')"></div>
             </div>
             <div class="section-image__caption section-image__caption-vertical-left">Esencia Tropical</div>
           </section>
@@ -250,59 +315,44 @@
               <div class="row">
                 <div class="col-lg-3 col-sm-6 section-properties__item">
                   <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">eco</i>
+                    </div>
                     <div class="figure-info__option">Ingrediente Principal</div>
-                    <div class="figure-info__value">Aceite de Coco Virgen</div>
+                    <div class="figure-info__value">Aceite de Coco Natural</div>
                   </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 section-properties__item">
                   <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">face</i>
+                    </div>
                     <div class="figure-info__option">Tipo de Piel</div>
                     <div class="figure-info__value">Piel Seca y Normal</div>
                   </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 section-properties__item">
                   <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">local_florist</i>
+                    </div>
                     <div class="figure-info__option">Aroma</div>
                     <div class="figure-info__value">Tropical Natural</div>
                   </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 section-properties__item">
                   <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">inventory</i>
+                    </div>
                     <div class="figure-info__option">Presentación</div>
-                    <div class="figure-info__value">100g - 150g</div>
+                    <div class="figure-info__value">140g</div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
           <!-- - section PROPERTIES -->
-
-          <!-- section CONTENT #2 -->
-          <section class="section section-content section_pt section_pb bg-light" data-os-animation="data-os-animation">
-            <div class="container">
-              <div class="row justify-content-between">
-                <div class="col-lg-5 section-content__header">
-                  <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
-                    <h4>Modo de Uso</h4>
-                  </div>
-                </div>
-                <div class="col-lg-5 section-content__content">
-                  <div class="split-text js-split-text" data-split-text-type="words, lines" data-split-text-set="lines">
-                    <p><strong>Para mejores resultados:</strong><br><br>
-                    
-                    1. Humedece la piel con agua tibia<br>
-                    2. Aplica el jabón realizando movimientos suaves y circulares<br>
-                    3. Permite que la espuma actúe por unos segundos<br>
-                    4. Enjuaga completamente con agua<br>
-                    5. Seca la piel suavemente con una toalla<br><br>
-                    
-                    <strong>Recomendación:</strong> Usa dos veces al día para mantener tu piel hidratada y con un aroma tropical duradero. Ideal para uso en ducha o baño.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <!-- - section CONTENT #2 -->
 
           <!-- section NAV PROJECTS -->
           <section class="section-nav-projects bg-accent-primary-2">

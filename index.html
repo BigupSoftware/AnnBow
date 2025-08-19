@@ -69,6 +69,43 @@
         margin-top: 2rem !important;
       }
     }
+
+    /* Estilos para estadísticas */
+    .stats-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      border-top: 3px solid #c69f73;
+      margin-bottom: 30px;
+    }
+    
+    .stats-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .stats-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #c69f73;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    
+    .stats-suffix {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #c69f73;
+      display: inline-block;
+    }
+    
+    .stats-label {
+      font-size: 1rem;
+      color: #666;
+      font-weight: 500;
+    }
   </style>
 </head>
 
@@ -275,8 +312,6 @@
       </div>
     </section>
 
-
-
     <!-- Sección de cinta con texto en loop -->
     <section class="marquee-section">
       <div class="marquee">
@@ -290,6 +325,7 @@
         </div>
       </div>
     </section>
+
     <!-- Nueva sección para reemplazar la existente -->
     <section class="section section-content section_pt section_pb bg-off-white" data-os-animation="data-os-animation">
       <div class="container">
@@ -320,6 +356,68 @@
         </div>
       </div>
     </section>
+
+    <!-- section STATS -->
+    <section class="section section_pt section_pb bg-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-card">
+              <span class="stats-number" data-target="4">0</span><span class="stats-suffix">+</span>
+              <div class="stats-label">Generaciones de Tradición</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-card">
+              <span class="stats-number" data-target="80">0</span><span class="stats-suffix">+</span>
+              <div class="stats-label">Años de Experiencia</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-card">
+              <span class="stats-number" data-target="100">0</span><span class="stats-suffix">%</span>
+              <div class="stats-label">Productos Naturales</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-card">
+              <span class="stats-number" data-target="1000">0</span><span class="stats-suffix">+</span>
+              <div class="stats-label">Clientes Satisfechos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- - section STATS -->
+
+    <!-- section IMAGE #1 -->
+    <section class="section section-image section_w-container-right section_h-800">
+      <div class="section-image__wrapper" data-art-parallax="background" data-art-parallax-factor="0.1">
+        <div class="art-parallax__bg lazy-bg" style="background-image: url('img/nosotros/jabon.png')"></div>
+      </div>
+      <div class="section-image__caption section-image__caption-vertical-left">Tradición Artesanal</div>
+    </section>
+    <!-- - section IMAGE #1 -->
+
+    <!-- section CONTENT MAIN -->
+    <section class="section section-content section_pt section_pb bg-light" data-os-animation="data-os-animation">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-5 section-content__header">
+            <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
+              <h5>Como empresa familiar orientada a resultados con sede en Montevideo, llevamos ese nivel de cuidado al corazón en todo lo que hacemos. Brindar un equilibrio saludable entre el trabajo y la vida no es solo lo correcto para nuestros empleados; también se presta a algunos de los mejores trabajos que nuestra gente puede hacer.</h5>
+            </div>
+          </div>
+          <div class="col-lg-5 section-content__content">
+            <div class="split-text js-split-text" data-split-text-type="words, lines" data-split-text-set="lines">
+              <p>¿Qué más esperarías cuando creativos enérgicos y talentosos se reúnen bajo un mismo techo con un objetivo común? Debates animados comparando los méritos relativos de las técnicas tradicionales versus las modernas, por supuesto.</p>
+              <p>Estamos dedicados a empujarnos a nosotros mismos y entre nosotros para luchar por la excelencia en todo lo que hacemos para nuestros clientes. Nuestros equipos en ANNBOW colaboran incansablemente porque las mejores ideas tienden a surgir simplemente al reunir nuestros talentos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- - section CONTENT MAIN -->
 
     <!-- - section ABOUT -->
     <!-- section HEADER #1 -->
@@ -787,6 +885,52 @@
         }, 300);
       }
     }, 4000);
+
+    // Función de animación de contador
+    function animateCounter(element, target, duration) {
+      let start = 0;
+      const increment = target / (duration / 16);
+      
+      function updateCounter() {
+        start += increment;
+        if (start < target) {
+          element.textContent = Math.floor(start);
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target;
+        }
+      }
+      
+      updateCounter();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animación de contadores para estadísticas
+      const statsNumbers = document.querySelectorAll('.stats-number');
+      let statsAnimated = false;
+      
+      const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !statsAnimated) {
+            statsAnimated = true;
+            
+            statsNumbers.forEach(function(number, index) {
+              const target = parseInt(number.getAttribute('data-target'));
+              setTimeout(function() {
+                animateCounter(number, target, 2000);
+              }, index * 200);
+            });
+            
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      const statsSection = document.querySelector('.section.section_pt.section_pb.bg-white');
+      if (statsSection) {
+        statsObserver.observe(statsSection);
+      }
+    });
   </script>
 
   <!-- PAGE SCRIPTS-->

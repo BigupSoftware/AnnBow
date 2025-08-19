@@ -46,6 +46,71 @@
       .split-text, .js-split-text {
         will-change: transform;
       }
+
+      /* Estilos mejorados para propiedades con iconos */
+      .figure-info {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        margin-bottom: 30px;
+        height: 100%;
+      }
+      
+      .figure-info:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(198, 159, 115, 0.15);
+      }
+      
+      .figure-info__icon {
+        width: 60px;
+        height: 60px;
+        background: #c69f73;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 28px;
+        transition: all 0.3s ease;
+      }
+      
+      .figure-info:hover .figure-info__icon {
+        transform: scale(1.1);
+        background: #a8876b;
+      }
+      
+      .figure-info__option {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      
+      .figure-info__value {
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      /* Animación para la entrada de secciones */
+      .section-properties {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 0.8s ease forwards;
+        animation-delay: 0.3s;
+      }
+      
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </head>
   <body>
@@ -67,8 +132,8 @@
       <!-- - PAGE PRELOADER -->
       
       <!-- PAGE HEADER -->
-      <header class="header header_fixed js-sticky-header header_color-white" data-header-animation=""
-        data-header-sticky-theme="bg-white">
+      <header class="header header_fixed js-sticky-header header_color-dark" data-header-animation=""
+        data-header-sticky-theme="bg-dark">
         <div class="container-fluid header__controls">
           <div class="row justify-content-between align-items-center">
             <div class="col text-left header__col-left">
@@ -199,7 +264,7 @@
               <header class="row section-masthead__header justify-content-start">
                 <div class="col mw-960">
                   <div class="subheading split-text js-split-text section-masthead__subheading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Cuidado Baby</div>
-                  <h1 class="js-text-to-fly split-text js-split-text section-masthead__heading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Jabón Baby Hipoalergénico</h1>
+                  <h1 class="js-text-to-fly split-text js-split-text section-masthead__heading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Baby Hipoalergénico</h1>
                   <h4 class="heading-light split-text js-split-text section-masthead__text" data-split-text-type="lines" data-split-text-set="lines">Formulado especialmente para la delicada piel de los bebés, este jabón hipoalergénico es suave y seguro, ideal para el uso diario con máxima protección y cuidado.</h4>
                   <div class="section__headline"></div>
                 </div>
@@ -211,7 +276,7 @@
           <!-- section IMAGE #1 -->
           <section class="section section-image section_w-container-right section_h-800">
             <div class="section-image__wrapper" data-art-parallax="background" data-art-parallax-factor="0.1">
-              <div class="art-parallax__bg lazy-bg" style="background-image: url('../img/assets/projects/bg-baby.jpg')"></div>
+              <div class="art-parallax__bg lazy-bg" style="background-image: url('../img/productos/producto-baby.png')"></div>
             </div>
             <div class="section-image__caption section-image__caption-vertical-left">Cuidado Especial</div>
           </section>
@@ -232,10 +297,11 @@
                     • Hipoalergénico y dermatológicamente probado<br>
                     • Sin colorantes ni fragancias artificiales<br>
                     • pH balanceado para piel sensible<br>
-                    • Rico en glicerina natural hidratante<br><br>
+                    • Rico en glicerina natural hidratante<br>
+                    • Textura extra suave y cremosa<br><br>
                     
-                    <strong>Beneficios:</strong><br>
-                    Específicamente diseñado para bebés, respeta la barrera natural de la piel, no causa irritación ni sequedad, mantiene la suavidad natural, e ideal para pieles atópicas y sensibles.</p>
+                    <strong>Beneficios únicos:</strong><br>
+                    Específicamente diseñado para bebés, respeta la barrera natural de la piel, no causa irritación ni sequedad, mantiene la suavidad natural, e ideal para pieles atópicas y sensibles. Proporciona limpieza gentle con máxima seguridad.</p>
                   </div>
                 </div>
               </div>
@@ -243,12 +309,57 @@
           </section>
           <!-- - section CONTENT #1 -->
 
+          <!-- section PROPERTIES -->
+          <section class="section section-properties section_pt-small section_pb-small text-center bg-white">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">child_care</i>
+                    </div>
+                    <div class="figure-info__option">Fórmula Especial</div>
+                    <div class="figure-info__value">Hipoalergénico</div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">sentiment_satisfied</i>
+                    </div>
+                    <div class="figure-info__option">Tipo de Piel</div>
+                    <div class="figure-info__value">Piel delicada de los bebés</div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">nature</i>
+                    </div>
+                    <div class="figure-info__option">Composición</div>
+                    <div class="figure-info__value">Sin Fragancias</div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">inventory</i>
+                    </div>
+                    <div class="figure-info__option">Presentación</div>
+                    <div class="figure-info__value">140g</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- - section PROPERTIES -->
+
           <!-- section NAV PROJECTS -->
           <section class="section-nav-projects bg-accent-primary-2">
             <div class="row no-gutters">
-              <a class="col-md-5 section-nav-projects__inner section-nav-projects__inner_prev" href="neutro.html" data-pjax-link="flyingHeading">
+              <a class="col-md-5 section-nav-projects__inner section-nav-projects__inner_prev" href="perfumados.html" data-pjax-link="flyingHeading">
                 <div class="section-nav-projects__wrapper-heading section-nav-projects__wrapper-heading_prev">
-                  <div class="section-nav-projects__heading section-nav-projects__heading_prev split-text js-text-to-fly js-split-text" data-split-text-type="lines, words, chars" data-split-text-set="chars">Jabón Neutro</div>
+                  <div class="section-nav-projects__heading section-nav-projects__heading_prev split-text js-text-to-fly js-split-text" data-split-text-type="lines, words, chars" data-split-text-set="chars">Con Perfume</div>
                 </div>
                 <div class="section-nav-projects__arrow section-nav-projects__arrow_prev material-icons">keyboard_arrow_left</div>
               </a>

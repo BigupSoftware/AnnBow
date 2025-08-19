@@ -46,6 +46,71 @@
       .split-text, .js-split-text {
         will-change: transform;
       }
+
+      /* Estilos mejorados para propiedades con iconos */
+      .figure-info {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        margin-bottom: 30px;
+        height: 100%;
+      }
+      
+      .figure-info:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(198, 159, 115, 0.15);
+      }
+      
+      .figure-info__icon {
+        width: 60px;
+        height: 60px;
+        background: #c69f73;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 28px;
+        transition: all 0.3s ease;
+      }
+      
+      .figure-info:hover .figure-info__icon {
+        transform: scale(1.1);
+        background: #a8876b;
+      }
+      
+      .figure-info__option {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+      
+      .figure-info__value {
+        font-size: 1.1rem;
+        color: #333;
+        font-weight: 600;
+      }
+
+      /* Animación para la entrada de secciones */
+      .section-properties {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 0.8s ease forwards;
+        animation-delay: 0.3s;
+      }
+      
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   </head>
   <body>
@@ -67,8 +132,8 @@
       <!-- - PAGE PRELOADER -->
       
       <!-- PAGE HEADER -->
-      <header class="header header_fixed js-sticky-header header_color-white" data-header-animation=""
-        data-header-sticky-theme="bg-white">
+      <header class="header header_fixed js-sticky-header header_color-dark" data-header-animation=""
+        data-header-sticky-theme="bg-dark">
         <div class="container-fluid header__controls">
           <div class="row justify-content-between align-items-center">
             <div class="col text-left header__col-left">
@@ -199,7 +264,7 @@
               <header class="row section-masthead__header justify-content-start">
                 <div class="col mw-960">
                   <div class="subheading split-text js-split-text section-masthead__subheading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Cuidado Personal</div>
-                  <h1 class="js-text-to-fly split-text js-split-text section-masthead__heading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Jabón Perfumado</h1>
+                  <h1 class="js-text-to-fly split-text js-split-text section-masthead__heading" data-split-text-type="lines, words, chars" data-split-text-set="chars">Con Perfume</h1>
                   <h4 class="heading-light split-text js-split-text section-masthead__text" data-split-text-type="lines" data-split-text-set="lines">Disfruta de una variedad de fragancias refrescantes y duraderas. Nuestro jabón de glicerina perfumado está formulado para ofrecer una experiencia sensorial única, dejando la piel suave y deliciosamente perfumada.</h4>
                   <div class="section__headline"></div>
                 </div>
@@ -211,7 +276,7 @@
           <!-- section IMAGE #1 -->
           <section class="section section-image section_w-container-right section_h-800">
             <div class="section-image__wrapper" data-art-parallax="background" data-art-parallax-factor="0.1">
-              <div class="art-parallax__bg lazy-bg" style="background-image: url('../img/assets/projects/bg-perfumado.jpg')"></div>
+              <div class="art-parallax__bg lazy-bg" style="background-image: url('../img/productos/producto-perfumados.png')"></div>
             </div>
             <div class="section-image__caption section-image__caption-vertical-left">Fragancias Naturales</div>
           </section>
@@ -223,7 +288,7 @@
               <div class="row justify-content-between">
                 <div class="col-lg-5 section-content__header">
                   <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
-                    <h5>Jabón de glicerina perfumado con fragancias cuidadosamente seleccionadas. Su fórmula suave y aromática ofrece una experiencia de baño única y placentera.</h5>
+                    <h5>Jabón de glicerina perfumado con fragancias cuidadosamente seleccionadas. Su fórmula suave y aromática ofrece una experiencia de baño única y placentera, combinando limpieza efectiva con aromas envolventes.</h5>
                   </div>
                 </div>
                 <div class="col-lg-5 section-content__content">
@@ -233,10 +298,11 @@
                     • Rico en glicerina natural hidratante<br>
                     • Variedad de aromas disponibles<br>
                     • Hipoalergénico y dermatológicamente probado<br>
-                    • Espuma cremosa y suave<br><br>
+                    • Espuma cremosa y abundante<br>
+                    • Base de glicerina pura traslúcida<br><br>
                     
-                    <strong>Beneficios:</strong><br>
-                    Perfecto para el uso diario que deja la piel suave y perfumada, mantiene la hidratación natural de la piel, ofrece una experiencia sensorial agradable, y es ideal para quienes buscan un toque aromático en su rutina de cuidado personal.</p>
+                    <strong>Beneficios únicos:</strong><br>
+                    Perfecto para el uso diario, deja la piel suave y delicadamente perfumada durante horas. Mantiene la hidratación natural de la piel, ofrece una experiencia sensorial agradable, y es ideal para quienes buscan un toque aromático especial en su rutina de cuidado personal.</p>
                   </div>
                 </div>
               </div>
@@ -244,32 +310,50 @@
           </section>
           <!-- - section CONTENT #1 -->
 
-          <!-- section FRAGRANCES -->
-          <section class="section section-content section_pt section_pb bg-white" data-os-animation="data-os-animation">
+          <!-- section PROPERTIES -->
+          <section class="section section-properties section_pt-small section_pb-small text-center bg-white">
             <div class="container">
-              <div class="row justify-content-between">
-                <div class="col-lg-5 section-content__header">
-                  <div class="split-text js-split-text" data-split-text-type="lines" data-split-text-set="lines">
-                    <h4>Variedades de Fragancias</h4>
+              <div class="row">
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">check</i>
+                    </div>
+                    <div class="figure-info__option">Uso</div>
+                    <div class="figure-info__value">Diario</div>
                   </div>
                 </div>
-                <div class="col-lg-5 section-content__content">
-                  <div class="split-text js-split-text" data-split-text-type="words, lines" data-split-text-set="lines">
-                    <p><strong>Fragancias Disponibles:</strong><br><br>
-                    
-                    <strong>• Lavanda:</strong> Relajante y calmante, ideal para uso nocturno<br>
-                    <strong>• Cítricos:</strong> Refrescante y energizante para empezar el día<br>
-                    <strong>• Flores Silvestres:</strong> Delicado y femenino aroma floral<br>
-                    <strong>• Mentol:</strong> Sensación refrescante y vigorizante<br>
-                    <strong>• Vainilla:</strong> Suave y dulce, para toda la familia<br><br>
-                    
-                    Cada fragancia está cuidadosamente formulada para durar y brindar una experiencia aromática única durante y después del baño.</p>
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">face</i>
+                    </div>
+                    <div class="figure-info__option">Tipo de Piel</div>
+                    <div class="figure-info__value">Todo Tipo</div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">palette</i>
+                    </div>
+                    <div class="figure-info__option">Variedad</div>
+                    <div class="figure-info__value">3 Fragancias</div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 section-properties__item">
+                  <div class="figure-info">
+                    <div class="figure-info__icon">
+                      <i class="material-icons">inventory</i>
+                    </div>
+                    <div class="figure-info__option">Presentación</div>
+                    <div class="figure-info__value">3 x 120g</div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <!-- - section FRAGRANCES -->
+          <!-- - section PROPERTIES -->
 
           <!-- section NAV PROJECTS -->
           <section class="section-nav-projects bg-accent-primary-2">
