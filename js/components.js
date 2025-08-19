@@ -1185,7 +1185,9 @@ var PJAX = function () {
 				$el = $(el),
 				exludeRules = [
 					'[data-elementor-open-lightbox]', // Elementor lightbox gallery
-					'.lang-switcher a' // Polylang & WPML language switcher
+					'.lang-switcher a' , // Polylang & WPML language switcher
+					'.logo a',  // ← AGREGA ESTA LÍNEA
+            		'.header .logo a' 
 				];
 
 			// elementor preview
