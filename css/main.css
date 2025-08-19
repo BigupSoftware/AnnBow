@@ -8506,6 +8506,10 @@ cite:before {
       .section-intro .logo-main img {
         height: 60px;
       }
+
+      .marquee {
+        animation: scroll 10s linear infinite; /* Aún más rápido en móviles pequeños */
+      }
     }
     
  
@@ -8562,6 +8566,34 @@ cite:before {
       .quote-icon-modern__symbol {
         font-size: 3rem;
       }
+
+      .marquee {
+        animation: scroll 15s linear infinite; /* Reducido de 30s a 15s */
+      }
       
     }
+
+    /* Centrar imagen en móviles */
+@media (max-width: 991px) {
+  .col-lg-6.section-content__content.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .product-image-container {
+    margin: 30px auto 0 auto;
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-image-container {
+    max-width: 300px;
+    margin: 20px auto 0 auto;
+  }
+}
 
